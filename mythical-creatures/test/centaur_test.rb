@@ -1,7 +1,7 @@
 gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'centaur'
+require_relative '../lib/centaur'
 
 class CentaurTest < Minitest::Test
   def test_it_has_a_name
@@ -10,37 +10,31 @@ class CentaurTest < Minitest::Test
   end
 
   def test_it_has_a_horse_breed
-    skip
     centaur = Centaur.new("George","Palomino")
     assert_equal "Palomino", centaur.breed
   end
 
   def test_it_has_excellent_bow_skills
-    skip
     centaur = Centaur.new("George","Palomino")
     assert_equal "Twang!!!", centaur.shoot
   end
 
   def test_it_makes_a_horse_sound_when_it_runs
-    skip
     centaur = Centaur.new("George","Palomino")
     assert_equal "Clop clop clop clop!!!", centaur.run
   end
 
   def test_when_first_created_it_is_not_cranky
-    skip
     centaur = Centaur.new("George","Palomino")
     refute centaur.cranky?
   end
 
   def test_when_first_created_it_is_standing_up
-    skip
     centaur = Centaur.new("George","Palomino")
     assert centaur.standing?
   end
 
   def test_after_running_or_shooting_a_bow_three_times_it_gets_cranky
-    skip
     centaur = Centaur.new("George","Palomino")
     refute centaur.cranky?
     centaur.shoot
